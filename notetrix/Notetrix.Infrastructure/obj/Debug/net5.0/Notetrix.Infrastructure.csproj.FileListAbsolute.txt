@@ -1,0 +1,15 @@
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\Notetrix.Infrastructure.deps.json
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\Notetrix.Infrastructure.dll
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\ref\Notetrix.Infrastructure.dll
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\Notetrix.Infrastructure.pdb
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\Notetrix.Core.dll
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\bin\Debug\net5.0\Notetrix.Core.pdb
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.csprojAssemblyReference.cache
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.AssemblyInfo.cs
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.csproj.CopyComplete
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.dll
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\ref\Notetrix.Infrastructure.dll
+C:\Users\joeridgley\code\notetrix\notetrix\Notetrix.Infrastructure\obj\Debug\net5.0\Notetrix.Infrastructure.pdb
