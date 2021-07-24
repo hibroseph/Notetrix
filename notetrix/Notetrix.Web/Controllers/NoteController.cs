@@ -39,11 +39,17 @@ namespace Notetrix.Web.Controllers
 		}
 
 		[HttpPatch]
-		public async Task<IActionResult> UpdateNote( int userId, Guid noteId, [FromBody] string title, [FromBody] string content )
+		public async Task<IActionResult> UpdateNote( int userId, Guid noteId, [FromBody] NoteDto noteDto )
 		{
-			await _saveNotes.SaveNoteAsync( userId, new Note( title, content, noteId ) );
+			await _saveNotes.SaveNoteAsync( userId, new Note( noteDto.Title, noteDto.Content, noteId ) );
 
 			return StatusCode( 200 );
+		}
+
+		public class NoteDto
+		{
+			public string Title { get; set; }
+			public string Content { get; set; }
 		}
 
 		private NoteModel BuildNoteModel( List<Note> notes )

@@ -1,13 +1,34 @@
 ﻿@model Notetrix.Web.Models.Note.NoteModel
+1
+Add Your Kit's Code to a Project
+<script src="https://kit.fontawesome.com/87ce340d08.js" crossorigin="anonymous"></script>
+<style>
+	.noteContainer {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid black;
+		border-radius: 10px;
+		padding: 10px;
+	}
 
-<button id="create-note" onclick="createNote(100)">New</button>
+		.noteContainer input {
+			border: none;
+			margin: 5px 0px;
+		}
+
+		.noteContainer textarea {
+			border: none;
+			margin: 5px 0px;
+		}
+</style>
+<button id="create-note" onclick="createNote()">New</button>
 
 <div id="notes-container">
 	@foreach ( var note in Model.Notes )
 	{
-		<div data-id="@note.Id">
-			<h3>@note.Title</h3>
-			<textarea>@note.Content</textarea>
+		<div class="noteContainer" data-id="@note.Id">
+			<div><input onkeyup="updateNote(this)" value="@note.Title" /><i onclick="deleteNote(this)" class="fas fa-trash"></i></div>
+			<textarea onkeyup="updateNote(this)">@note.Content</textarea>
 		</div>
 	}
 </div>
@@ -20,8 +41,9 @@
 		console.log("adding note to dom");
 		let noteContainer = document.createElement("div");
 		noteContainer.id = id;
-		let noteTitle = document.createElement("h3");
-		noteTitle.innerText = title;
+		noteContainer.classList.add('noteContainer');
+		let noteTitle = document.createElement("input");
+		noteTitle.value = title;
 		let textArea = document.createElement("textarea");
 		textArea.innerText = content;
 
@@ -33,19 +55,52 @@
 		notesContainer.appendChild(noteContainer);
 	}
 
-	let createNote = function (userId) {
-		fetch(`/note/createnote?userId=${userId}`,
-				{
-					method: 'POST'
-				})
+	let createNote = function () {
+		console.log('creating note')
+		fetch(`/note/createnote?userId=${getUserId()}`,
+			{
+				method: 'POST'
+			})
 			.then(data => data.json())
 			.then(note => {
 				// we now have the new note
 				console.log(note);
-				
+
 				addNoteToDom(note.title, note.content, note.id);
 			});
 	}
 
+	let deleteNote = function (deleteElement) {
+		let noteContainer = deleteElement.parentNode.parentNode;
+	}
+
+	let updateNote = function (textArea) {
+		let noteContainer = textArea.parentNode;
+		console.log(noteContainer);
+
+		let title = noteContainer.querySelector('input').value;
+		let body = noteContainer.querySelector('textarea').value;
+
+		fetch(`/note/updatenote?userId=${getUserId()}&noteId=${getNoteId(noteContainer)}`,
+			{
+				method: 'PATCH',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					title: title,
+					content: body
+				})
+			});
+
+	}
+
+	let getUserId = function () {
+		return new URLSearchParams(window.location.search).get('userid');
+	}
+
+	let getNoteId = function (noteNode) {
+		return noteNode.getAttribute("data-id");
+	}
 
 </script>
